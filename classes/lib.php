@@ -28,6 +28,7 @@ defined('MOODLE_INTERNAL') || die;
 class lib {
     /**
      * Returns the fallback language.
+     *
      * @return string
      */
     public static function default_lang(): string {
@@ -36,9 +37,11 @@ class lib {
 
     /**
      * Get the contents of a helptext or a sorry-info.
-     * @param int $pathid the path of the item.
+     *
+     * @param int $pathid     the path of the item.
      * @param string $content the content identifier: version, shorttitle, longtitle, shortdescription, longdescription
-     * @param array $langs the languages to use
+     * @param array $langs    the languages to use
+     *
      * @return string
      */
     public static function get_content(int $pathid, string $content, array $langs): string {
@@ -63,9 +66,11 @@ class lib {
 
     /**
      * Get the absolute filepath of an embedded file within a FAQ item.
-     * @param int $pathid the pathid of the item.
+     *
+     * @param int $pathid      the pathid of the item.
      * @param string $filename the filename.
-     * @param array $langs the languages to use.
+     * @param array $langs     the languages to use.
+     *
      * @return string|null the absolute file path within the dataroot.
      */
     public static function get_filepath(int $pathid, string $filename, array $langs): ?string {
@@ -84,9 +89,11 @@ class lib {
 
     /**
      * Get the absolute filepath of an embedded file in the general files folder.
-     * @param int $pathid the pathid of the item.
+     *
+     * @param int $pathid      the pathid of the item.
      * @param string $filename the filename.
-     * @param array $langs the languages to use.
+     * @param array $langs     the languages to use.
+     *
      * @return string|null the absolute file path within the dataroot.
      */
     public static function get_generalfilepath(string $filename, array $langs): ?string {
@@ -103,7 +110,9 @@ class lib {
 
     /**
      * Get the relative path of a pathid.
+     *
      * @param int $pathid
+     *
      * @return string|null
      * @throws \dml_exception
      */
@@ -124,8 +133,10 @@ class lib {
 
     /**
      * Test if a certain relative path exists in a certain language, and that it is not outside the FAQ-basepath.
+     *
      * @param string $path
      * @param string $lang
+     *
      * @return null|string
      * @throws \moodle_exception if invalid path was given.
      */
@@ -192,7 +203,9 @@ class lib {
 
     /**
      * Detect if text contains html and enhance accordingly.
+     *
      * @param string $text
+     *
      * @return string
      */
     private static function enhancetext(string $text): string {
@@ -221,11 +234,13 @@ class lib {
 
     /**
      * Use something like the realpath()-function on files that do not exist.
+     *
      * @param string $path
+     *
      * @return string
      */
     private static function realpath(string $path): string {
-        $path = array_reduce(explode('/', $path), function($a, $b) {
+        $path = array_reduce(explode('/', $path), function ($a, $b) {
             if ($a === null) {
                 $a = "/";
             }

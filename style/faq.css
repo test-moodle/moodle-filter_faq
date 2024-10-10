@@ -3,50 +3,41 @@
     font-size: 16px;
     font-weight: bold;
 }
-
 .filter_faq.card.card-body {
     padding-top: 65px;
     max-width: 1980px;
     margin: 0 auto;
 }
-
 .filter_faq .widgetcontainer .col-widget {
     flex: 1 1 20% !important;
 }
-
 .filter_faq .widgetcontainer .card {
     justify-content: center;
 }
-
 .filter_faq .widgetcontainer .card-footer {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 /* Flex layout for FAQ pages */
 .filter_faq .flex-container {
     display: flex;
     align-items: stretch;
     gap: 5px;
 }
-
 .filter_faq .flex-container > .morehelp-btn {
     flex: 80px;
     height: unset;
 }
-
 .filter_faq .flex-container > *:not(.morehelp-btn) {
     flex: calc(100% - 90px);
 }
-
 @media (max-width: 575px) {
     .filter_faq .flex-container {
         flex-direction: column;
         align-items: unset;
     }
-
     .filter_faq .flex-container > .morehelp-btn {
         flex-direction: row;
         gap: 5px;
@@ -56,7 +47,6 @@
         margin: 0 auto;
     }
 }
-
 /* Grid container for card based pages (about/getstarted) */
 .filter_faq .faq-grid {
     display: grid;
@@ -65,7 +55,6 @@
     margin-left: auto;
     margin-right: auto;
 }
-
 @media (max-width: 575px) {
     .filter_faq .faq-grid {
         display: grid;
@@ -75,7 +64,6 @@
         margin-left: auto;
         margin-right: auto;
     }
-
     .filter_faq .faq-grid .morehelp-btn {
         flex-direction: row;
         gap: 5px;
@@ -83,12 +71,10 @@
         margin-bottom: 15px;
     }
 }
-
 /* left-handed elements */
 .filter_faq .faq-grid *:not(.morehelp-btn):not(.action-wrapper) {
     grid-column: 1/2;
 }
-
 /* more help button styling */
 .filter_faq .morehelp-btn {
     display: flex;
@@ -102,24 +88,20 @@
     font-weight: bold;
     color: black !important;
 }
-
 /* Aligns FAQ Item header to page header */
 summary.btn-link:not(.btn-secondary),
 a.btn-link:not(.btn-secondary):not(.morehelp-btn) {
     margin-left: -14px;
 }
-
 /* More spacing between FAQ icon and text */
 summary.btn-link .fa-regular,
 a.btn-link:not(.morehelp-btn) .fa-regular {
     padding-right: 5px;
 }
-
 /* Aligns FAQ text horizontally with FAQ header text */
 .filter_faq details p {
     margin-left: 25px;
 }
-
 .filter_faq details ol,
 .filter_faq details ul {
     margin-left: 3px;

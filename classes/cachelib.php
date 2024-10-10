@@ -57,9 +57,12 @@ class cachelib {
 
     /**
      * Getter for caches.
+     *
      * @param string $type either application or session.
-     * @param string $key (optional) used to get a certain key from the cache.
-     * @return mixed the cached value, or null if no cache! (this differs to moodle, which returns false on cache on no cache
+     * @param string $key  (optional) used to get a certain key from the cache.
+     *
+     * @return mixed the cached value, or null if no cache! (this differs to moodle, which returns false on cache on no
+     *               cache
      */
     public static function get(string $type, $key) {
         $key = static::stringKey($key);
@@ -78,8 +81,9 @@ class cachelib {
 
     /**
      * Method used as setter for caches.
+     *
      * @param string $type either application or session.
-     * @param string $key (optional) used to get a certain key from the cache.
+     * @param string $key  (optional) used to get a certain key from the cache.
      * @param mixed $value (optional) used to set a value for a certain key in the cache.
      */
     public static function set(string $type, $key, $value) {
@@ -93,8 +97,9 @@ class cachelib {
 
     /**
      * Delete cache entry
+     *
      * @param string $type either application or session.
-     * @param string $key (optional) used to get a certain key from the cache.
+     * @param string $key  (optional) used to get a certain key from the cache.
      */
     public static function delete(string $type, $key) {
         $key = static::stringKey($key);

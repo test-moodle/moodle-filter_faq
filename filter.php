@@ -25,9 +25,9 @@ defined('MOODLE_INTERNAL') || die;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class filter_faq extends moodle_text_filter {
-    private static int $currentdepth = 0;
-    private static int $maxdepth = 10;
-    private static bool $morehelpshown = false;
+private static int $currentdepth = 0;
+private static int $maxdepth = 10;
+private static bool $morehelpshown = false;
 
     public function filter($text, array $options = array()) {
         if (strpos($text, "{faq:") === false)
@@ -61,7 +61,7 @@ class filter_faq extends moodle_text_filter {
             if ($path == 'stringlib') {
                 $strinfo = explode('~', implode(':', array_slice($match, 1)));
                 if (count($strinfo) < 2) {
-                    $elementtext = get_string('stringlib:invalid_path', 'filter_faq', [ 'match' => implode('~', $strinfo)]);
+                    $elementtext = get_string('stringlib:invalid_path', 'filter_faq', ['match' => implode('~', $strinfo)]);
                 } else {
                     $textid = $strinfo[0];
                     $component = $strinfo[1];
@@ -75,7 +75,7 @@ class filter_faq extends moodle_text_filter {
                     $pathid = \filter_faq\lib::get_pathid($path);
                 } catch (\moodle_exception $e) {
                     if ($CFG->developermode) {
-                        $text = str_replace($search, '[FAQ-DEV,tag:'.$search.',error:'.$e->getMessage().']', $text);
+                        $text = str_replace($search, '[FAQ-DEV,tag:' . $search . ',error:' . $e->getMessage() . ']', $text);
                         return $text;
                     } else {
                         throw $e;
@@ -90,13 +90,13 @@ class filter_faq extends moodle_text_filter {
                 } else {
                     $params = (object)[
                         'morehelpshown' => static::$morehelpshown ? 1 : 0,
-                        'langarray' => "['".implode("','", $langs)."']",
+                        'langarray' => "['" . implode("','", $langs) . "']",
                         'longdescription' => '',
                         'longtitle' => '',
                         'p' => $pathid,
                         'shortdescription' => '',
                         'shorttitle' => '',
-                        'type_'.$type => 1,
+                        'type_' . $type => 1,
                         'urlprimary' => (new \moodle_url('/filter/faq/page.php', ['p' => $pathid]))->out(),
                         'urlsecondary' => (new \moodle_url('/filter/faq/page.php', ['l' => $secondarylang, 'p' => $pathid]))->out(),
                     ];
